@@ -5,19 +5,31 @@
     </div>
     <div class="watched-view">
       <film-list :films="watchedFilms"></film-list>
+      <film-info v-if= "selectedFilm != null" v-show="selectedFilm" :film="selectedFilm"></film-info>
     </div>
   </div>
 </template>
 
 <script>
 
-import FilmList from '@/components/FilmList'
+import FilmList from '@/components/FilmList';
+import FilmInfo from '@/components/FilmInfo';
+import { eventBus } from '@/main.js'
 export default {
-  name: "watched-films",
-  components: {
-    "film-list": FilmList
+  data() {
+    return {
+      selectedFilm: null
+    }
   },
-  props: ['watchedFilms']
+  components: {
+    "film-list": FilmList,
+    "film-info": FilmInfo
+  },
+  props: ['watchedFilms',],
+  mounted(){
+      eventBus.$on('film-selected', film => this.selectedFilm = film )
+    }
+  
 }
 </script>
 

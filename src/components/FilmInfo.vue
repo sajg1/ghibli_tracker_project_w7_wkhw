@@ -7,7 +7,6 @@
     <br>
     <p>Description:</p>
     <p>{{film.description}}</p>
-    <!-- <button v-on:click="addToWatched">I've Seen This!</button> -->
   </div>
 </template>
 
@@ -18,9 +17,7 @@ export default {
   name: "film-info",
   props: ['film'],
   method: {
-    // addToWatched: function() {
-    //   eventBus.$emit('film-watched', this.film)
-    // }
+  
   }
 
 }

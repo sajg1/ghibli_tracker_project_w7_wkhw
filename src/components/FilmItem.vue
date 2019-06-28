@@ -2,7 +2,7 @@
   <div class= "film-item">
     <li>{{film.title}}</li>
     <button v-on:click="displayFilmInfo">Film Info</button>
-    <button v-on:click="addToWatched">I've Seen This!</button>
+    <button v-if="!onWatchedView" v-on:click="addToWatched">I've Seen This!</button>
   </div>
 </template>
 
@@ -19,6 +19,11 @@ export default {
     addToWatched: function(){
       eventBus.$emit('film-watched', this.film)
     }
+  },
+  computed: {
+    onWatchedView: function (){
+      return this.$route.name === "watched"
+    }
   }
 }
 </script>
@@ -29,4 +34,6 @@ export default {
 
   margin: 20px;
 }
+
+
 </style>
