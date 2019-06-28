@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import FilmsView from '@/views/FilmsView'
-import Watched from '@/views/Watched'
+import WatchedView from '@/views/WatchedView'
 
 Vue.use(Router);
 
@@ -15,7 +15,7 @@ const router = new Router ({
     {
       path: '/watched',
       name: 'watched',
-      component: Watched
+      component: WatchedView
     }
   ]
 })
