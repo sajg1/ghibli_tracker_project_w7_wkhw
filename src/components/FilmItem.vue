@@ -2,6 +2,7 @@
   <div class= "film-item">
     <li>{{film.title}}</li>
     <button v-on:click="displayFilmInfo">Film Info</button>
+    <button v-on:click="addToWatched">I've Seen This!</button>
   </div>
 </template>
 
@@ -14,6 +15,9 @@ export default {
   methods: {
     displayFilmInfo: function(){
       eventBus.$emit('film-selected', this.film )
+    },
+    addToWatched: function(){
+      eventBus.$emit('film-watched', this.film)
     }
   }
 }
@@ -23,6 +27,6 @@ export default {
 
 .film-item {
 
-  margin: 5px;
+  margin: 20px;
 }
 </style>

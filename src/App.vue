@@ -5,22 +5,27 @@
     <router-link :to="{ name: 'watched'}">Already Watched</router-link>
     </nav>
 
-    <router-view :films="films" id="view"/>
+    <router-view :films="films" :watchedFilms="watchedFilms" id="view"/>
   </div>
 </template>
 
 <script>
+
+import { eventBus } from '@/main.js'
 export default {
   name: 'app',
   data() {
     return {
-      films: []
+      films: [],
+      watchedFilms: []
     }
   },
   mounted(){
     fetch('https://ghibliapi.herokuapp.com/films')
     .then(res => res.json())
     .then(data => this.films = data)
+
+    eventBus.$on('film-watched', film => this.watchedFilms.push(film))
   }
 
 
@@ -30,9 +35,11 @@ export default {
 <style lang="css" scoped>
 
   a {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     padding-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
+    text-decoration: none;
   }
 
 </style>

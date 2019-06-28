@@ -1,7 +1,11 @@
 <template lang="html">
   <div>
-    <h1>Studio Ghibli Films</h1>
-      <div class="film-view">
+    <div class="films-header">
+    <h1>Studio Ghibli Films Tracker</h1>
+    <p>Below is a full list of all films produced by Studio Ghibli. This app has been made to help you keep track of which films you have seen.</p>
+    </div>
+
+      <div class="films-view">
         <film-list :films="films"></film-list>
         <film-info v-if= "selectedFilm != null" v-show="selectedFilm" :film="selectedFilm"></film-info>
       </div>
@@ -33,13 +37,22 @@ export default {
 <style lang="css" scoped>
 
   h1 {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    text-align: center;
-    color: #2c3e50;
-    margin: 20px
+    color: white;
+    background-color: #319CAC;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
   }
 
-  .film-view {
+  .films-header {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    text-align: center;
+  }
+
+
+
+  .films-view {
 
     display: flex;
     justify-content: space-between;

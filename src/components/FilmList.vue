@@ -19,10 +19,13 @@ export default {
 <style lang="css" scoped>
 
   .film-list {
-    margin-top: 60px;
+    margin-top: 20px;
     width: 30%;
     height: 400px;
     overflow-y: scroll;
     list-style-type: none;
+    /* border: 2px solid #319CAC;
+    border-radius: 5px; */
+
   }
 </style>
