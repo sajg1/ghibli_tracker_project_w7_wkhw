@@ -1,7 +1,6 @@
 <template lang="html">
   <div class="film-list">
     <film-item v-for="(film, index) in films" :film="film" :key="index"></film-item>
-
   </div>
 </template>
 
@@ -23,9 +22,6 @@ export default {
     width: 30%;
     height: 400px;
     overflow-y: scroll;
-    list-style-type: none;
-    /* border: 2px solid #319CAC;
-    border-radius: 5px; */
-
+    list-style-type: none;  
   }
 </style>

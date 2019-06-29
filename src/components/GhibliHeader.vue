@@ -12,13 +12,11 @@ export default {
 <style lang="css" scoped>
 
 h1 {
-  color: white;
-  background-color: #319CAC;
-  margin: 20px;
-  padding: 10px;
-  border-radius: 5px;
+  color: #f3e8d9;
+  background-color: #c04a52;
+  margin: 0;
+  padding: 25px;
   font-weight: bold;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  text-align: center;
+  text-align: left;
 }
 </style>

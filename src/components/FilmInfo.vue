@@ -17,7 +17,7 @@ export default {
   name: "film-info",
   props: ['film'],
   method: {
-  
+
   }
 
 }
@@ -25,7 +25,8 @@ export default {
 
 <style lang="css" scoped>
   .film-info {
-      border: 2px solid #319CAC;
+      background-color: #1d938a;
+      color: #f3e8d9;
       border-radius: 5px;
       margin: 20px;
       padding: 5px;

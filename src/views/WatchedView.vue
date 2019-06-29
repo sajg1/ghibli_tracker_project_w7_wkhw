@@ -1,8 +1,6 @@
 <template lang="html">
   <div>
-    <div class="watched-header">
       <h2>Already Watched</h2>
-    </div>
     <div class="watched-view">
       <film-list :films="watchedFilms"></film-list>
       <film-info v-if= "selectedFilm != null" v-show="selectedFilm" :film="selectedFilm"></film-info>
@@ -33,31 +31,24 @@ export default {
 </script>
 
 <style lang="css" scoped>
-/* h2 {
 
-  background-color: #319CAC;
-  margin: 20px;
-  padding: 10px;
-  border-radius: 5px;
-  font-weight: bold;
-} */
-
-.watched-header {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  text-align: center;
-  color: #2c3e50;
-}
+  h2 {
+    margin: 0;
+    text-align: left;
+    background-color: #990033;
+    color: #f3e8d9;
+    padding: 25px;
+  }
 
 
 
-.watched-view {
+  .watched-view {
 
-  display: flex;
-  justify-content: space-between;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  text-align: center;
-  color: #2c3e50;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    color: #990033;
 
-}
+  }
 
 </style>

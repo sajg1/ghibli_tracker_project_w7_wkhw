@@ -15,11 +15,22 @@ export default {
 
 <style lang="css" scoped>
 
+  .nav {
+    text-align: left;
+    background-color: #e38787;
+    margin:0;
+    padding:10px;
+
+
+  }
+
   a {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    color: #f3e8d9;
+    font-weight: bold;
     padding-top: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
     text-decoration: none;
-}
+  }
 </style>

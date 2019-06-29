@@ -36,13 +36,21 @@ export default {
 
 <style lang="css" scoped>
 
+  p {
+    margin: 0;
+    background-color: #990033;
+    color: #f3e8d9;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    padding: 25px;
+
+  }
+
   .films-view {
 
     display: flex;
     justify-content: space-between;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     text-align: center;
-    color: #2c3e50;
+    color: #990033;
 
   }
 

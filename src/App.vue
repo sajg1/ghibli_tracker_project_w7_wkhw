@@ -37,4 +37,9 @@ export default {
 
 <style lang="css" scoped>
 
+  #app {
+    background-color: #f3e8d9;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  }
+
 </style>
