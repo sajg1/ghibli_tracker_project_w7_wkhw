@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <div class="watched-header">
-      <h1>Watched</h1>
+      <h2>Already Watched</h2>
     </div>
     <div class="watched-view">
       <film-list :films="watchedFilms"></film-list>
@@ -29,23 +29,23 @@ export default {
   mounted(){
       eventBus.$on('film-selected', film => this.selectedFilm = film )
     }
-  
 }
 </script>
 
 <style lang="css" scoped>
-h1 {
-  color: white;
+/* h2 {
+
   background-color: #319CAC;
   margin: 20px;
   padding: 10px;
   border-radius: 5px;
   font-weight: bold;
-}
+} */
 
 .watched-header {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   text-align: center;
+  color: #2c3e50;
 }
 
 

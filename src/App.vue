@@ -1,10 +1,7 @@
 <template>
   <div id="app">
-    <nav>
-    <router-link :to="{ name: 'films'}">Films</router-link>
-    <router-link :to="{ name: 'watched'}">Already Watched</router-link>
-    </nav>
-
+    <ghibli-navbar />
+    <ghibli-header title="Studio Ghibli Film Tracker"/>
     <router-view :films="films" :watchedFilms="watchedFilms" id="view"/>
   </div>
 </template>
@@ -12,6 +9,8 @@
 <script>
 
 import { eventBus } from '@/main.js'
+import GhibliNavBar from '@/components/GhibliNavBar'
+import GhibliHeader from '@/components/GhibliHeader'
 export default {
   name: 'app',
   data() {
@@ -19,6 +18,10 @@ export default {
       films: [],
       watchedFilms: []
     }
+  },
+  components: {
+    "ghibli-navbar": GhibliNavBar,
+    "ghibli-header": GhibliHeader
   },
   mounted(){
     fetch('https://ghibliapi.herokuapp.com/films')
@@ -33,13 +36,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
-  a {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    padding-top: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-decoration: none;
-  }
 
 </style>
