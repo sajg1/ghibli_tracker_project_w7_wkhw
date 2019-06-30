@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-      <h2>Already Watched</h2>
+      <h3>Already Watched</h3>
     <div class="watched-view">
       <film-list :films="watched" :watchedFilms="watchedFilms"></film-list>
       <film-info v-if= "selectedFilm != null" v-show="selectedFilm" :film="selectedFilm"></film-info>
@@ -32,12 +32,12 @@ export default {
 
 <style lang="css" scoped>
 
-  h2 {
+  h3 {
     opacity: 0.8;
     margin: 0;
     text-align: left;
     background-color: #990033;
-    padding: 25px;
+    padding: 20px;
   }
 
 

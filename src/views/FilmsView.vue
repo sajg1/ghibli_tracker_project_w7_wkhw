@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-    <p>Below is a full list of all films produced by Studio Ghibli. This app has been made to help you keep track of which films you have seen. Click on 'Already Watched' to see your list.</p>
+    <h3>Below is a full list of all films produced by Studio Ghibli. Select 'Film Info' to find out more.</h3>
 
     <div class="films-view">
       <film-list :films="films" :watchedFilms="watchedFilms"></film-list>
@@ -11,7 +11,7 @@
 
 <script>
 import FilmList from '@/components/FilmList';
-import FilmInfo from '@/components/FilmInfo'
+import FilmInfo from '@/components/FilmInfo';
 import { eventBus } from '@/main.js';
 
 export default {
@@ -33,11 +33,12 @@ export default {
 
 <style lang="css" scoped>
 
-  p {
+  h3 {
     opacity: 0.8;
     margin: 0;
     background-color: #990033;
-    padding: 25px;
+    padding: 20px;
+    text-align: left;
 
   }
 

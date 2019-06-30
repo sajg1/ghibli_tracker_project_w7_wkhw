@@ -1,6 +1,7 @@
 <template lang="html">
   <div class="nav">
     <nav>
+    <router-link :to="{ name: 'home'}">Home</router-link>
     <router-link :to="{ name: 'films'}">Films</router-link>
     <router-link :to="{ name: 'watched'}">Already Watched</router-link>
     </nav>
@@ -26,7 +27,6 @@ export default {
 
   a {
     padding: 20px;
-    text-align: center;
     width: 100%;
     color: #f3e8d9;
     font-weight: bold;

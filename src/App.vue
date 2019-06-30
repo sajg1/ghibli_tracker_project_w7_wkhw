@@ -2,8 +2,8 @@
   <div id="app">
     <ghibli-navbar />
     <ghibli-header title="STUDIO GHIBLI Film Tracker"/>
-    <h2 v-if="allFilms">&#9733;&#9733;&#9733; Yay, you've seen all of STUDIO GHIBLI's Films  &#9733;&#9733;&#9733;</h2>
-    <div id="background-image">
+    <h2 v-if="allFilms">&#9733;&#9733;&#9733; You've watched the entire Collection! &#9733;&#9733;&#9733;</h2>
+    <div :class="allFilms ? 'all-films-watched':'background-image'">
       <router-view :films="films" :watchedFilms="watchedFilms" :watched="watched" id="view"/>
     </div>
   </div>
@@ -67,8 +67,14 @@ export default {
     font-family: 'Open Sans Condensed', sans-serif;
   }
 
-  #background-image {
+  .background-image {
     background-image: url('./assets/backgroundImg.jpg');
+    background-size: cover;
+    height: 700px;
+  }
+
+  .all-films-watched {
+    background-image: url('./assets/allFilmsWatched.jpg');
     background-size: cover;
     height: 700px;
   }
