@@ -32,15 +32,18 @@ export default {
   },
   methods: {
     removeFromWatched: function (film){
-      const index = this.watchedFilms.indexOf(film)
+      const index = this.watchedFilms.indexOf(film);
       this.watchedFilms.splice(index, 1);
+    },
+    addToWatched: function(film){
+      this.watchedFilms.push(film);
     }
   },
   mounted(){
     fetch('https://ghibliapi.herokuapp.com/films')
     .then(res => res.json())
     .then(data => this.films = data)
-    eventBus.$on('film-watched', film => this.watchedFilms.push(film))
+    eventBus.$on('film-watched', film => this.addToWatched(film))
 
     eventBus.$on('film-removed', film => this.removeFromWatched(film))
 
