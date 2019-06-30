@@ -4,6 +4,7 @@
     <p v-if="onWatchedView">&#10003;</p>
     <button v-on:click="displayFilmInfo">Film Info</button>
     <button v-if="!onWatchedView" v-on:click="addToWatched">I've Seen This!</button>
+    <button v-if="onWatchedView" v-on:click="removeFromWatched" >Remove from Watched</button>
   </div>
 </template>
 
@@ -19,7 +20,11 @@ export default {
     },
     addToWatched: function(){
       eventBus.$emit('film-watched', this.film)
+    },
+    removeFromWatched: function(){
+      eventBus.$emit('film-removed', this.film)
     }
+
   },
   computed: {
     onWatchedView: function (){
