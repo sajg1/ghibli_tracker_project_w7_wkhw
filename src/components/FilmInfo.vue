@@ -7,7 +7,6 @@
     <br>
     <p>Description:</p>
     <p>{{film.description}}</p>
-    <p v-if="onWatchedView">{{location.name}}</p>
   </div>
 </template>
 

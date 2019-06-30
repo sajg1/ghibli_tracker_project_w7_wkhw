@@ -1,7 +1,5 @@
 <template lang="html">
   <div class="">
-    <ghibli-navbar />
-    <ghibli-header title="STUDIO GHIBLI Film Tracker"/>
     <h3>Welcome!</h3>
     <div class="bio">
       <p>Studio Ghibli, Inc. (Japanese: 株式会社スタジオジブリ) is a Japanese animation film studio based in Koganei, Tokyo, Japan. </p>
@@ -12,14 +10,9 @@
 </template>
 
 <script>
-import FilmList from '@/components/FilmList';
-import FilmInfo from '@/components/FilmInfo';
 
 export default {
-  components: {
-    "film-list": FilmList,
-    "film-info": FilmInfo
-  }
+  
 }
 </script>
 
