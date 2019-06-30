@@ -20,7 +20,7 @@ export default {
   .film-list {
     margin-top: 20px;
     width: 30%;
-    height: 400px;
+    height: 600px;
     overflow-y: scroll;
     list-style-type: none;
   }

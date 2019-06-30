@@ -2,7 +2,7 @@
   <div id="app">
     <ghibli-navbar />
     <ghibli-header title="STUDIO GHIBLI Film Tracker"/>
-    <div id="image">
+    <div id="background-image">
       <router-view :films="films" :watchedFilms="watchedFilms" :watched="watched" id="view"/>
     </div>
   </div>
@@ -45,14 +45,16 @@ export default {
 <style lang="css" scoped>
 
   #app {
+    margin: 0;
     color: #f3e8d9;
     background-color: #f3e8d9;
     font-family: 'Open Sans Condensed', sans-serif;
   }
 
-  #image {
+  #background-image {
     background-image: url('./assets/backgroundImg.jpg');
     background-size: cover;
+    height: 700px;
   }
 
 

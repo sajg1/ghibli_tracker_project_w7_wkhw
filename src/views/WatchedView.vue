@@ -37,7 +37,6 @@ export default {
     margin: 0;
     text-align: left;
     background-color: #990033;
-    
     padding: 25px;
   }
 
@@ -48,8 +47,6 @@ export default {
     display: flex;
     justify-content: space-between;
     text-align: center;
-
-
   }
 
 </style>

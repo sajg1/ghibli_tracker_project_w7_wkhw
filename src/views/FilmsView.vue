@@ -1,15 +1,12 @@
 <template lang="html">
   <div>
-    <div class="films-header">
-    <!-- <h1>Studio Ghibli Films Tracker</h1> -->
     <p>Below is a full list of all films produced by Studio Ghibli. This app has been made to help you keep track of which films you have seen. Click on 'Already Watched' to see your list.</p>
-    </div>
 
-      <div class="films-view">
-        <film-list :films="films" :watchedFilms="watchedFilms"></film-list>
-        <film-info v-if= "selectedFilm != null" v-show="selectedFilm" :film="selectedFilm"></film-info>
-      </div>
+    <div class="films-view">
+      <film-list :films="films" :watchedFilms="watchedFilms"></film-list>
+      <film-info v-if= "selectedFilm != null" v-show="selectedFilm" :film="selectedFilm"></film-info>
     </div>
+  </div>
 </template>
 
 <script>
@@ -40,7 +37,6 @@ export default {
     opacity: 0.8;
     margin: 0;
     background-color: #990033;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     padding: 25px;
 
   }

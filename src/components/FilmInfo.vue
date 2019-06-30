@@ -30,8 +30,8 @@ export default {
       color: #f3e8d9;
       border-radius: 5px;
       margin: 20px;
-      padding: 5px;
-
+      padding: 20px;
+      height: 530px;
       width: 70%;
   }
 
