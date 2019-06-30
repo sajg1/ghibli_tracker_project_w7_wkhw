@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import FilmsView from '@/views/FilmsView'
-import WatchedView from '@/views/WatchedView'
+import FilmsView from '@/views/FilmsView';
+import WatchedView from '@/views/WatchedView';
 
 Vue.use(Router);
 

@@ -7,6 +7,7 @@
     <br>
     <p>Description:</p>
     <p>{{film.description}}</p>
+    <p v-if="onWatchedView">{{location.name}}</p>
   </div>
 </template>
 
@@ -16,10 +17,6 @@ import { eventBus } from '@/main.js'
 export default {
   name: "film-info",
   props: ['film'],
-  methods: {
-
-  }
-
 }
 </script>
 

@@ -2,7 +2,7 @@
   <div>
       <h2>Already Watched</h2>
     <div class="watched-view">
-      <film-list :films="watched" :watchedFilms="watchedFilms" ></film-list>
+      <film-list :films="watched" :watchedFilms="watchedFilms"></film-list>
       <film-info v-if= "selectedFilm != null" v-show="selectedFilm" :film="selectedFilm"></film-info>
     </div>
   </div>
@@ -17,7 +17,7 @@ export default {
   props: ['watchedFilms', 'watched'],
   data() {
     return {
-      selectedFilm: null
+      selectedFilm: null,
     }
   },
   components: {

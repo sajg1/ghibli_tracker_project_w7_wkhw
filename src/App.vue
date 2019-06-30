@@ -2,6 +2,7 @@
   <div id="app">
     <ghibli-navbar />
     <ghibli-header title="STUDIO GHIBLI Film Tracker"/>
+    <h2 v-if="allFilms">&#9733;&#9733;&#9733; Yay, you've seen all of STUDIO GHIBLI's Films  &#9733;&#9733;&#9733;</h2>
     <div id="background-image">
       <router-view :films="films" :watchedFilms="watchedFilms" :watched="watched" id="view"/>
     </div>
@@ -27,7 +28,11 @@ export default {
   },
   computed: {
     watched: function(){
-      return this.watchedFilms.map(watchedFilm => this.films.find( film => watchedFilm === film))
+      return this.watchedFilms.map(watchedFilm => this.films.find( film => watchedFilm === film));
+    },
+    allFilms: function(){
+      if (this.films.length === this.watchedFilms.length)
+        return true;
     }
   },
   methods: {
@@ -66,6 +71,15 @@ export default {
     background-image: url('./assets/backgroundImg.jpg');
     background-size: cover;
     height: 700px;
+  }
+
+  h2 {
+    color: #f3e8d9;
+    background-color: #688b79;
+    margin: 0;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
   }
 
 
