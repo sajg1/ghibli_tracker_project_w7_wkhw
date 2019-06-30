@@ -1,6 +1,7 @@
 <template lang="html">
   <div class= "film-item">
     <li>{{film.title}}</li>
+    <p v-if="onWatchedView">&#10003;</p>
     <button v-on:click="displayFilmInfo">Film Info</button>
     <button v-if="!onWatchedView" v-on:click="addToWatched">I've Seen This!</button>
   </div>
@@ -11,7 +12,7 @@
 import { eventBus } from '@/main.js'
 export default {
   name: 'film-item',
-  props: ['film'],
+  props: ['film', 'watchedFilms'],
   methods: {
     displayFilmInfo: function(){
       eventBus.$emit('film-selected', this.film )
@@ -22,8 +23,8 @@ export default {
   },
   computed: {
     onWatchedView: function (){
-      return this.$route.name === "watched"
-    }
+      return this.watchedFilms.includes(this.film)
+    },
   }
 }
 </script>

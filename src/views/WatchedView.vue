@@ -2,7 +2,7 @@
   <div>
       <h2>Already Watched</h2>
     <div class="watched-view">
-      <film-list :films="watchedFilms"></film-list>
+      <film-list :films="watched" :watchedFilms="watchedFilms" ></film-list>
       <film-info v-if= "selectedFilm != null" v-show="selectedFilm" :film="selectedFilm"></film-info>
     </div>
   </div>
@@ -14,6 +14,7 @@ import FilmList from '@/components/FilmList';
 import FilmInfo from '@/components/FilmInfo';
 import { eventBus } from '@/main.js'
 export default {
+  props: ['watchedFilms', 'watched'],
   data() {
     return {
       selectedFilm: null
@@ -23,7 +24,6 @@ export default {
     "film-list": FilmList,
     "film-info": FilmInfo
   },
-  props: ['watchedFilms',],
   mounted(){
       eventBus.$on('film-selected', film => this.selectedFilm = film )
     }
@@ -33,10 +33,11 @@ export default {
 <style lang="css" scoped>
 
   h2 {
+    opacity: 0.8;
     margin: 0;
     text-align: left;
     background-color: #990033;
-    color: #f3e8d9;
+    
     padding: 25px;
   }
 
@@ -47,7 +48,7 @@ export default {
     display: flex;
     justify-content: space-between;
     text-align: center;
-    color: #990033;
+
 
   }
 

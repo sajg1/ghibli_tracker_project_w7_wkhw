@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="film-list">
-    <film-item v-for="(film, index) in films" :film="film" :key="index"></film-item>
+    <film-item v-for="(film, index) in films" :film="film" :key="index" :watchedFilms="watchedFilms"></film-item>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import FilmItem from '@/components/FilmItem'
 export default {
   name: "film-list",
-  props:["films"],
+  props:["films", "watchedFilms"],
   components: {
     "film-item": FilmItem
   }
@@ -22,6 +22,6 @@ export default {
     width: 30%;
     height: 400px;
     overflow-y: scroll;
-    list-style-type: none;  
+    list-style-type: none;
   }
 </style>

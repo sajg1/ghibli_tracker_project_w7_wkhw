@@ -1,8 +1,8 @@
 <template lang="html">
-  <div class="film-info">
-    <p>Title: {{film.title}}</p>
+  <div class= "film-info">
+    <h2>{{film.title}}</h2>
     <p>Director: {{film.director}}</p>
-    <p>Release Date:{{film.release_date}}</p>
+    <p>Release Date: {{film.release_date}}</p>
     <p>Rotten Tomatoes Rating: {{film.rt_score}}</p>
     <br>
     <p>Description:</p>
@@ -16,7 +16,7 @@ import { eventBus } from '@/main.js'
 export default {
   name: "film-info",
   props: ['film'],
-  method: {
+  methods: {
 
   }
 
@@ -25,7 +25,8 @@ export default {
 
 <style lang="css" scoped>
   .film-info {
-      background-color: #1d938a;
+      opacity: 0.8;
+      background-color: #c04a52;
       color: #f3e8d9;
       border-radius: 5px;
       margin: 20px;
@@ -33,5 +34,7 @@ export default {
 
       width: 70%;
   }
+
+
 
 </style>

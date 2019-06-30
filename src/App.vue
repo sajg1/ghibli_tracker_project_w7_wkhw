@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <ghibli-navbar />
-    <ghibli-header title="Studio Ghibli Film Tracker"/>
-    <router-view :films="films" :watchedFilms="watchedFilms" id="view"/>
+    <ghibli-header title="STUDIO GHIBLI Film Tracker"/>
+    <div id="image">
+      <router-view :films="films" :watchedFilms="watchedFilms" :watched="watched" id="view"/>
+    </div>
   </div>
 </template>
 
@@ -23,12 +25,17 @@ export default {
     "ghibli-navbar": GhibliNavBar,
     "ghibli-header": GhibliHeader
   },
+  computed: {
+    watched: function(){
+      return this.watchedFilms.map(watchedFilm => this.films.find( film => watchedFilm === film))
+    }
+  },
   mounted(){
     fetch('https://ghibliapi.herokuapp.com/films')
     .then(res => res.json())
     .then(data => this.films = data)
-
     eventBus.$on('film-watched', film => this.watchedFilms.push(film))
+
   }
 
 
@@ -38,8 +45,17 @@ export default {
 <style lang="css" scoped>
 
   #app {
+    color: #f3e8d9;
     background-color: #f3e8d9;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
   }
+
+  #image {
+    background-image: url('./assets/backgroundImg.jpg');
+    background-size: cover;
+  }
+
+
+
 
 </style>
