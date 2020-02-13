@@ -26,22 +26,13 @@ export default {
     "ghibli-navbar": GhibliNavBar,
     "ghibli-header": GhibliHeader
   },
-  mounted(){
-    fetch('https://ghibliapi.herokuapp.com/films')
-    .then(res => res.json())
-    .then(data => this.films = data)
-    eventBus.$on('film-watched', film => this.addToWatched(film))
-
-    eventBus.$on('film-removed', film => this.removeFromWatched(film))
-
-  },
   computed: {
-    allFilms: function(){
-      if (this.films.length !== this.watchedFilms.length)
-        return false;
-    },
     watched: function(){
       return this.watchedFilms.map(watchedFilm => this.films.find( film => watchedFilm === film));
+    },
+    allFilms: function(){
+      if (this.films.length === this.watchedFilms.length)
+        return true;
     }
   },
   methods: {
@@ -52,8 +43,16 @@ export default {
     addToWatched: function(film){
       this.watchedFilms.push(film);
     }
-  }
+  },
+  mounted(){
+    fetch('https://ghibliapi.herokuapp.com/films')
+    .then(res => res.json())
+    .then(data => this.films = data)
+    eventBus.$on('film-watched', film => this.addToWatched(film))
 
+    eventBus.$on('film-removed', film => this.removeFromWatched(film))
+
+  }
 
 
 }
